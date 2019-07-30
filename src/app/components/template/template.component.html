@@ -26,7 +26,11 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Apellido">
+               placeholder="Apellido"
+               name="apellido"
+               ngModel
+               minlength="5"
+               required>
       </div>
     </div>
 
@@ -38,7 +42,11 @@
 
       <input class="form-control"
              type="email"
-             placeholder="Correo electrónico">
+             placeholder="Correo electrónico"
+             name="correo"
+             ngModel
+             minlength="5"
+             required>
     </div>
   </div>
 

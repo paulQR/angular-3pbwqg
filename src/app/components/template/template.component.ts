@@ -8,8 +8,9 @@ export class TemplateComponent {
 
     constructor(){}
 
-    guardar(){
+    guardar(forma:any){
        console.log("Formulario posteado");
+       console.log(forma);
     }
 
 }

@@ -16,9 +16,11 @@ export class TemplateComponent {
     constructor(){}
 
     guardar( forma: NgForm ){
-       console.log("Formulario posteado");
+       //console.log("Formulario posteado");
        console.log("ngForm ", forma);
-       console.log("Valor ", forma.value);
+       console.log("Valor forma", forma.value);
+
+       console.log("Usuario", this.usuario);
     }
 
 }

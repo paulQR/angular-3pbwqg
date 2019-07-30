@@ -14,7 +14,7 @@
                type="text"
                placeholder="Nombre"
                name="nombre"
-               [ngModel]="usuario.nombre"
+               [(ngModel)]="usuario.nombre"
                minlength="5"
                required>
       </div>
@@ -28,7 +28,7 @@
                type="text"
                placeholder="Apellido"
                name="apellido"
-               [ngModel]="usuario.apellido"
+               [(ngModel)]="usuario.apellido"
                minlength="5"
                required>
       </div>
@@ -44,9 +44,10 @@
              type="email"
              placeholder="Correo electrónico"
              name="correo"
-             [ngModel]="usuario.correo"
+             [(ngModel)]="usuario.correo"
              minlength="5"
-             required>
+             required
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
     </div>
   </div>
 

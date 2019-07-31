@@ -2,14 +2,14 @@
 
 <h4>Formularios <small>template</small></h4>
 <hr>
-<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="" class="needs-validation" >
 
   <div>
 <!--
-    <div class="form-group row" [ngClass]="{'has-danger': nombre.errors?.minlength || nombre.errors?.required}">
+    <div class="form-group row" [ngClass]="{'has-danger': (nombre.errors?.minlength || nombre.errors?.required) && nombre.touched}">
       -->
-    <div class="form-group row" [ngClass]="{'invalid-feedback': nombre.errors?.minlength || nombre.errors?.required}">      
-      <label class="col-2 col-form-label">Nombre</label>
+    <div class="form-group row">      
+      <label class="col-2 col-form-label" [ngClass]="{'invalid': (nombre.errors?.minlength || nombre.errors?.required)  && nombre.touched}">Nombre</label>
       <div class="col-8">
 
         <input class="form-control"
@@ -24,11 +24,11 @@
             <div *ngIf="nombre.errors?.required"
                   class="form-control-feedback"
               > -->
-            <div *ngIf="nombre.errors?.required">
+            <div *ngIf="nombre.errors?.required" [ngClass]="{'invalid': nombre.errors?.required  && nombre.touched}">
               
               Este campo es requerido
             </div>
-            <div *ngIf="nombre.errors?.minlength">
+            <div *ngIf="nombre.errors?.minlength" [ngClass]="{'invalid': nombre.errors?.minlength  && nombre.touched}">
               Por lo menos {{nombre.errors.minlength.requiredLength}} caracteres
             </div>
 
@@ -83,7 +83,9 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button [disabled]="!forma.valid"
+              type="submit"
+              class="btn btn-outline-primary">
         Guardar
       </button>
     </div>

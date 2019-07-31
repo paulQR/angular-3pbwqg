@@ -100,10 +100,10 @@
           <input  [(ngModel)]="usuario.sexo"
                   type="radio" 
                   name="sexo" 
-                  id="customRadio+s"
+                  id=`customRadio+{{s}}` 
                   [value]="s"
                   class="custom-control-input">
-          <label class="custom-control-label"  for="customRadio+s">{{s}}</label>
+          <label class="custom-control-label"  for=`customRadio+{{s}}`>{{s}}</label>
         </div>
       <!--
        <div class="custom-control custom-radio">

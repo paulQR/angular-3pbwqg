@@ -128,6 +128,18 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Acepta</label>
+    <div class="col-md-8">
+        <div class="custom-control custom-checkbox">
+          <input [(ngModel)]="usuario.acepta"
+                name="acepta"
+                type="checkbox" 
+                class="custom-control-input" id="customCheck1" required>
+          <label class="custom-control-label" for="customCheck1">Acepta las condiciones</label>
+        </div>
+    </div> 
+  </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>

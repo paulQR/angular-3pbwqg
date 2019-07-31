@@ -25,7 +25,8 @@ export class TemplateComponent {
       apellido: null,
       correo: null,
       pais: "",
-      sexo: "Hombre"
+      sexo: "Hombre",
+      acepta: false
     }
 
     paises = [{

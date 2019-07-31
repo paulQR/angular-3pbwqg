@@ -37,6 +37,8 @@ export class TemplateComponent {
       nombre: "España"   
     }]
 
+    sexos:string[] = ["Hombre", "Mujer", "Sin definir"];
+
     constructor(){}
 
     guardar( forma: NgForm ){

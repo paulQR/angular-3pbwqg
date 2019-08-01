@@ -20,10 +20,24 @@ export class DataComponent {
     constructor(){
 
           console.log(this.usuario);
+          /*
           this.forma = new FormGroup({
 
             'nombrecompleto': new FormGroup({
-                'nombre': new FormControl('', [ 
+                'nombre': new FormControl( this.usuario.nombrecompleto.nombre, [ 
+                                              Validators.required,
+                                              Validators.minLength(3) ]),
+                'apellido': new FormControl(this.usuario.nombrecompleto.apellido, Validators.required )
+            }),
+            'correo': new FormControl(this.usuario.correo,   [
+                              Validators.required, 
+                              Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")] )
+           });
+           */
+          this.forma = new FormGroup({
+
+            'nombrecompleto': new FormGroup({
+                'nombre': new FormControl( '', [ 
                                               Validators.required,
                                               Validators.minLength(3) ]),
                 'apellido': new FormControl('', Validators.required )
@@ -32,6 +46,8 @@ export class DataComponent {
                               Validators.required, 
                               Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")] )
            });
+
+            this.forma.setValue(this.usuario);
     }
 
     guardarCambios(){

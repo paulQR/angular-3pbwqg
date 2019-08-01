@@ -53,6 +53,17 @@ export class DataComponent {
     guardarCambios(){
       console.log(this.forma.value);
       console.log(this.forma);
+
+      //this.forma.reset(this.usuario);
+      this.forma.reset({
+          nombrecompleto: {
+            nombre:"",
+            apellido: ""
+          },
+          correo:""
+      });
+
+      //this.forma.controls['correo'].setValue('Nuevo correo@asdasd.com');
     }
 
 }

@@ -4,7 +4,10 @@
   margin-top: 50px;
 }
 
-.invalid, .invalid .col-8 > input{
+.invalid{
   color: red;
+}
+
+.invalid .col-8 > input{
   border-color: red;
 }

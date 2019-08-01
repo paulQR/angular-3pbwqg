@@ -92,7 +92,8 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
     <div class="col-md-8" formArrayName="pasatiempos">
-          <input formControlName="0"
+          <input *ngFor="let pasatiempo of forma.controls['pasatiempos'].controls; let i=index " 
+                [formControlName]="i"
                 type="text"
                 class="form-control">
     </div>

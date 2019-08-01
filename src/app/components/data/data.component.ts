@@ -56,7 +56,7 @@ export class DataComponent {
     }
 
     agregarPasatiempo(){
-        (<FormArray>this.forma.controls['pasatiempo']).push(
+        (<FormArray>this.forma.controls['pasatiempos']).push(
             new FormControl('Dormir', Validators.required )
         )
     }
